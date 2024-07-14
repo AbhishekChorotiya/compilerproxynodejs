@@ -30,8 +30,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(500).json(error);
     }
   } else {
-    return res
-      .status(404)
-      .json({ message: "Not Found", method: req.method || "unavailable" });
+    return res.status(404).json({
+      message: "Not Found",
+      method: req.method || "unavailable",
+      url: req.url || "unavailable url",
+    });
   }
 }
