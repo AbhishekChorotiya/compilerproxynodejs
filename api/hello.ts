@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import axios from "axios";
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method === "GET" && req.url === "/hello") {
+  if (req.method === "GET" && req.url === "/api/hello") {
     return res.json({ message: "Hello World, from Vercel!" });
   } else if (req.method === "POST" && req.url === "/api/compile") {
     try {
